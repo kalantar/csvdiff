@@ -1,6 +1,7 @@
 name: Hello
 on:
   workflow_dispatch:
+    types: [remote]
 
 jobs:
   say_hello:
