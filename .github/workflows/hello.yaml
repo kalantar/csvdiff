@@ -1,20 +1,11 @@
 name: Hello
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Michael'
-      home:
-        description: 'location'
-        required: false
-        default: 'Chapel Hill'
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello $!"
-        echo "- in $!"
+        echo "Hello Michael"
+        echo "- in Chapel Hill"
