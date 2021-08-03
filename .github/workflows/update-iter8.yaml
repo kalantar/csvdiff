@@ -37,7 +37,7 @@ jobs:
         run: |
           export KUSTOMIZATION=install/core/iter8-controller/kustomization.yaml
           sed -i "s#newTag: .*#newTag: ${{env.VERSION}}#" $KUSTOMIZATION
-          sed -i "s#- github.com/iter8-tools/etc3/config/crd/?ref=v.*#- github.com/iter8-tools/etc3/config/crd/?ref= v${{env.VERSION}}#" $KUSTOMIZATION
+          sed -i "s#- github.com/iter8-tools/etc3/config/crd/?ref=v.*#- github.com/iter8-tools/etc3/config/crd/?ref=v${{env.VERSION}}#" $KUSTOMIZATION
 
       - name: create pull request
         # https://github.com/marketplace/actions/create-pull-request
