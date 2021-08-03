@@ -31,7 +31,7 @@ jobs:
         # https://github.com/actions/checkout
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/kalantar/iter8
+          repository: kalantar/iter8
 
       - name: Update install kustomization.yaml
         run: |
