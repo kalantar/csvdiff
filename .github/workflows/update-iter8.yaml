@@ -43,7 +43,7 @@ jobs:
         # https://github.com/marketplace/actions/create-pull-request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ .secret.GH_TOKEN }}
+          token: ${{ .secrets.GH_TOKEN }}
           commit-message: 'Update install version of ${{env.REPO}}'
           committer: 'Iter8 <iter8@iter8.tools>'
           author: 'Iter8 <iter8@iter8.tools>'
