@@ -1,3 +1,3 @@
 # suba
 
-A file in a subdirectory
+A file in a subdirectory of a

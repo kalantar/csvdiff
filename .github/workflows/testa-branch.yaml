@@ -2,7 +2,7 @@ name: Build, Test and Push a
 on:
   push:
     paths:
-      - 'a/*'
+      - 'a/**'
   pull_request:
 
 jobs:
