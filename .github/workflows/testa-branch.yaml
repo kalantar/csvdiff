@@ -1,6 +1,8 @@
-name: Update Iter8
+name: Build, Test and Push a
 on:
   push:
+    paths:
+      - 'a/*'
   pull_request:
 
 jobs:
@@ -9,14 +11,14 @@ jobs:
     steps:
     - name: echo start
       run: |
-        echo "build-and-test executing"
+        echo "build-and-test a executing"
 
-  build-and-push:
+  build-and-push-a:
     needs: build-and-test
     if: github.event_name == 'push' # not pull request
     runs-on: ubuntu-latest
     steps:
     - name: echo
       run: |
-        echo "build-and-push executing"
+        echo "build-and-push a executing"
   

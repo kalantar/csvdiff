@@ -1,0 +1,24 @@
+name: Build, test and push b
+on:
+  push:
+    paths:
+      - 'b/*'
+  pull_request:
+
+jobs:
+  build-and-testb:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo start
+      run: |
+        echo "build-and-test b executing"
+
+  build-and-push:
+    needs: build-and-test
+    if: github.event_name == 'push' # not pull request
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: |
+        echo "build-and-push b executing"
+  
