@@ -1,0 +1,22 @@
+name: Update Iter8
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo start
+      run: |
+        echo "build-and-test executing"
+
+  build-and-push:
+    needs: build-and-test
+    if: github.event_name == 'push' # not pull request
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo
+      run: |
+        echo "build-and-push executing"
+  
