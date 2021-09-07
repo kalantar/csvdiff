@@ -17,12 +17,13 @@ jobs:
       run: |
         echo "build-and-test executing"
 
-  build-and-push-a:
+  build-and-push:
     needs: build-and-test
     if: github.event_name == 'push' || github.event_name == 'release'
     runs-on: ubuntu-latest
     steps:
     - name: echo
       run: |
+        echo "${{ github.ref }}"
         echo "build-and-push executing"
   
