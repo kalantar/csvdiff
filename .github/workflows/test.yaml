@@ -16,6 +16,21 @@ jobs:
     - name: echo start
       run: |
         echo "build-and-test executing"
+    - name: if push
+      if: github.event_name == 'push'
+      run: |
+        echo "build-and-test push"
+    - name: if pull_request
+      if: github.event_name == 'pull_request'
+      run: |
+        echo "build-and-test pull_request"
+    - name: if release
+      if: github.event_name == 'release'
+      run: |
+        echo "build-and-test release"
+    - name: end
+      run: |
+        echo "build-and-test end"
 
   build-and-push:
     needs: build-and-test
