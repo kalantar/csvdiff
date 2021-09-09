@@ -10,6 +10,18 @@ on:
   pull_request:
 
 jobs:
+  explore-go:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - run: go version
+    - run: which go
+    - run: go install github.com/iter8-tools/etc3/iter8ctl@mergerepos
+
   build-and-test:
     runs-on: ubuntu-latest
     steps:
